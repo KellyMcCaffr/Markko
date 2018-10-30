@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="bob.markkouserloginsignup.checkUserDelete"
+    tools:showIn="@layout/activity_check_user_delete">
+
+    <TextView
+        android:id="@+id/textView116"
+        android:layout_width="0dp"
+        android:layout_height="73dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Are you sure you want to delete your account?"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="46dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp" />
+
+    <Button
+        android:id="@+id/button36"
+        android:layout_width="125dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="cancelUDelete"
+        android:text="Cancel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button37"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+    <Button
+        android:id="@+id/button37"
+        android:layout_width="125dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="163dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginRight="46dp"
+        android:background="@android:color/holo_red_light"
+        android:onClick="deleteUAccount"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1" />
+</android.support.constraint.ConstraintLayout>

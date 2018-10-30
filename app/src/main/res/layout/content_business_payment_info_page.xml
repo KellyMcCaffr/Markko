@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="bob.markkouserloginsignup.businessPaymentInfoPage"
+    tools:showIn="@layout/activity_business_payment_info_page"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/textView49P"
+        android:layout_width="209dp"
+        android:layout_height="0dp"
+        android:text="Secure payment info!"
+        android:textColor="@android:color/black"
+        android:textSize="21sp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="6dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView51P"
+        android:layout_width="247dp"
+        android:layout_height="24dp"
+        android:text="Name (as it appears on the card)"
+        android:textColor="@android:color/black"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView52P"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="37dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <EditText
+        android:id="@+id/cardName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textView52P"
+        app:layout_constraintLeft_toLeftOf="@+id/textView51P"
+        app:layout_constraintRight_toRightOf="@+id/cardNumberP"
+        app:layout_constraintTop_toBottomOf="@+id/textView51P"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/textView52P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card number (no dashes or spaces)"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardNumberP" />
+
+    <EditText
+        android:id="@+id/cardNumberP"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="numberPassword"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/textView53P"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/textView53P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Expiration Date"
+        android:textColor="@android:color/black"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/textView54P"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintLeft_toLeftOf="@+id/cardNumberP" />
+
+    <TextView
+        android:id="@+id/textView54P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Security Code"
+        android:textColor="@android:color/black"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/cardSecurityCodeP"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/cardEDateMonthP" />
+
+    <EditText
+        android:id="@+id/cardSecurityCodeP"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="numberPassword"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/textView59P"
+        app:layout_constraintRight_toRightOf="@+id/cardBillingAddressP"
+        android:layout_marginTop="105dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="105dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView54P"
+        app:layout_constraintTop_toTopOf="@+id/textView52P" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Billing address"
+        android:textColor="@android:color/black"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/cardBillingAddressP"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/cardBillingAddressP" />
+
+    <EditText
+        android:id="@+id/cardBillingAddressP"
+        android:layout_width="210dp"
+        android:layout_height="20dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintRight_toLeftOf="@+id/textView57P"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/textView59P"
+        android:layout_marginTop="57dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="55dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView57P"
+        app:layout_constraintTop_toTopOf="@+id/textView54P"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textColor="@android:color/black"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/cardBACityP"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintLeft_toLeftOf="@+id/cardBACityP" />
+
+    <TextView
+        android:id="@+id/textView57P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="State"
+        android:textColor="@android:color/black"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardBillingAddressP"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/cardBAStateP"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:id="@+id/textView58P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zip"
+        android:textColor="@android:color/black"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/cardBAZipP"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintLeft_toRightOf="@+id/cardBillingAddressP"
+        android:layout_marginLeft="8dp" />
+
+    <EditText
+        android:id="@+id/cardBACityP"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/cardBAStateP"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/textView61P"
+        app:layout_constraintTop_toTopOf="@+id/cardBAStateP"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <EditText
+        android:id="@+id/cardBAStateP"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/textView59P"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/textView54P"
+        app:layout_constraintRight_toRightOf="@+id/cardShippingAddressP"
+        app:layout_constraintTop_toTopOf="@+id/textView57P"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/textView59P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shipping address"
+        android:textColor="@android:color/black"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="106dp"
+        app:layout_constraintLeft_toLeftOf="@+id/cardShippingAddressP" />
+
+    <EditText
+        android:id="@+id/cardShippingAddressP"
+        android:layout_width="192dp"
+        android:layout_height="20dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/textView60P"
+        android:layout_marginTop="17dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintTop_toTopOf="@+id/textView59P"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintRight_toLeftOf="@+id/cardSAStateP"
+        app:layout_constraintLeft_toLeftOf="@+id/cardSAStateP" />
+
+    <TextView
+        android:id="@+id/textView60P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textColor="@android:color/black"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView59P"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/cardShippingAddressP" />
+
+    <TextView
+        android:id="@+id/textView61P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="State"
+        android:textColor="@android:color/black"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/cardShippingAddressP"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/cardSAStateP" />
+
+    <TextView
+        android:id="@+id/textView62P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zip"
+        android:textColor="@android:color/black"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/sameAddressSwitchP"
+        app:layout_constraintLeft_toLeftOf="@+id/cardSAZipP" />
+
+    <EditText
+        android:id="@+id/cardSACityP"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintRight_toLeftOf="@+id/cardSAStateP"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardSAStateP"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView60P"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
+
+    <EditText
+        android:id="@+id/cardSAStateP"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="112dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView61P"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="112dp" />
+
+    <ImageView
+        android:id="@+id/busPayCheck"
+        android:layout_width="33dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onCheckmarkClicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/cardSACityP"
+        app:srcCompat="@drawable/checkmark"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+    <Spinner
+        android:id="@+id/businessMenu2"
+        android:layout_width="51dp"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        android:popupBackground="@android:color/darker_gray"
+        app:layout_constraintLeft_toRightOf="@+id/textView49P"
+        android:layout_marginLeft="21dp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/errorViewBoxP"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="12dp"
+        android:textColor="@android:color/holo_red_light"
+        app:layout_constraintBottom_toBottomOf="@+id/textView52P"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/textView51P"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginBottom="0dp" />
+
+    <Switch
+        android:id="@+id/sameAddressSwitchP"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:text="Same as billing address"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/cardShippingAddressP"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardShippingAddressP"
+        app:layout_constraintLeft_toRightOf="@+id/cardBillingAddressP" />
+
+    <CheckBox
+        android:id="@+id/cardButton1P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paypal"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardButton2p"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <CheckBox
+        android:id="@+id/cardButton2p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Master Card,Visa, American Express, Discover"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView49P"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <EditText
+        android:id="@+id/cardEDateMonthP"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="number"
+        android:text="(month)"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/cardEDateYearP"
+        app:layout_constraintTop_toBottomOf="@+id/textView53P"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/textView53P" />
+
+    <EditText
+        android:id="@+id/cardEDateYearP"
+        android:layout_width="130dp"
+        android:layout_height="20dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="number"
+        android:text="(year)"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/cardBAZipP"
+        app:layout_constraintRight_toRightOf="@+id/textView52P"
+        android:layout_marginTop="115dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardButton1P"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="115dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView52P" />
+
+    <EditText
+        android:id="@+id/cardBAZipP"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/cardBAStateP"
+        app:layout_constraintRight_toRightOf="@+id/cardSAZipP"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/textView58P"
+        app:layout_constraintTop_toTopOf="@+id/cardBAStateP" />
+
+    <EditText
+        android:id="@+id/cardSAZipP"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardSAStateP"
+        app:layout_constraintTop_toBottomOf="@+id/textView62P"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/sameAddressSwitchP"
+        android:layout_marginLeft="8dp" />
+</android.support.constraint.ConstraintLayout>

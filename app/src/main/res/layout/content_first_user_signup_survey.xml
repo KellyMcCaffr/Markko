@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                             tools:context="bob.markkouserloginsignup.firstUserSignupSurvey"
+                                             tools:layout_editor_absoluteX="0dp"
+                                             tools:layout_editor_absoluteY="81dp"
+                                             tools:showIn="@layout/activity_first_user_signup_survey">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp"
+        />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:text="Let's get to know you!"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView30"
+        app:layout_constraintLeft_toLeftOf="@+id/textView14"
+        app:layout_constraintRight_toRightOf="@+id/E4"
+        app:layout_constraintTop_toTopOf="@+id/textView30"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="166dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="47dp"
+        android:text="What is your gender?"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/A1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/A1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="71dp"
+        android:layout_marginTop="68dp"
+        android:text="Male"
+        app:layout_constraintBottom_toBottomOf="@+id/B1"
+        app:layout_constraintLeft_toLeftOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/A2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:text="Female"
+        app:layout_constraintLeft_toRightOf="@+id/A1"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/A3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:text="Other"
+        app:layout_constraintBaseline_toBaselineOf="@+id/A2"
+        app:layout_constraintLeft_toRightOf="@+id/A2"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="121dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="45dp"
+        android:layout_marginTop="42dp"
+        android:text="What is your age?"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/B1"
+        app:layout_constraintRight_toRightOf="@+id/B1"
+        app:layout_constraintTop_toTopOf="@+id/A1"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/B1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="139dp"
+        android:text="0-18"
+        app:layout_constraintLeft_toLeftOf="@+id/textView12"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/B4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="35+"
+        app:layout_constraintBaseline_toBaselineOf="@+id/B3"
+        app:layout_constraintLeft_toRightOf="@+id/B3"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="35dp"
+        android:text="What is your race or races?"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/C1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/E2"
+        app:layout_constraintTop_toTopOf="@+id/B1"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/C1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="black"
+        app:layout_constraintLeft_toLeftOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/B1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/C2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="white"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
+        app:layout_constraintLeft_toRightOf="@+id/C1"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/C3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:text="asian"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
+        app:layout_constraintLeft_toRightOf="@+id/C2"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/C4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:text="other"
+        app:layout_constraintBaseline_toBaselineOf="@+id/C3"
+        app:layout_constraintLeft_toRightOf="@+id/C3"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginTop="32dp"
+        android:text="What is your religious preference?"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/D1"
+        app:layout_constraintLeft_toLeftOf="@+id/C1"
+        app:layout_constraintRight_toRightOf="@+id/C3"
+        app:layout_constraintTop_toTopOf="@+id/C1"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/D1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="23dp"
+        android:text="Christian"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/C1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/D2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:text="Muslim"
+        app:layout_constraintLeft_toRightOf="@+id/D1"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/D3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Buddhist"
+        app:layout_constraintLeft_toRightOf="@+id/D2"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/D4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jewish"
+        app:layout_constraintLeft_toLeftOf="@+id/D1"
+        app:layout_constraintTop_toBottomOf="@+id/D1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/D5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atheist"
+        app:layout_constraintLeft_toLeftOf="@+id/D2"
+        app:layout_constraintTop_toBottomOf="@+id/D2"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="277dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:text="What is your highest level of education?"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/E1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/textView30"
+        app:layout_constraintTop_toTopOf="@+id/D4"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/checkBox26"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="22dp"
+        android:text="High School"
+        app:layout_constraintLeft_toLeftOf="@+id/textView14"
+        app:layout_constraintTop_toTopOf="@+id/E4"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/E4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="College"
+        app:layout_constraintBaseline_toBaselineOf="@+id/E5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/E5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        android:layout_marginLeft="14dp"
+        android:text="Post-Grad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/E4"
+        app:layout_constraintTop_toBottomOf="@+id/textView30"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        />
+
+    <CheckBox
+        android:id="@+id/E3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:text="High School"
+        app:layout_constraintLeft_toRightOf="@+id/E5"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/E1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Elementary"
+        app:layout_constraintBottom_toTopOf="@+id/E4"
+        app:layout_constraintLeft_toLeftOf="@+id/textView15"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/E2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:text="Middle"
+        app:layout_constraintRight_toLeftOf="@+id/E3"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="421dp"
+        android:layout_marginTop="6dp"
+        android:text="Let's get to know you!"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="@+id/textView30"
+        app:layout_constraintRight_toLeftOf="@+id/textView30"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="265dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="352dp"
+        android:layout_marginTop="6dp"
+        android:text="Let's get to know you!"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/E5"
+        app:layout_constraintLeft_toRightOf="@+id/textView10"
+        app:layout_constraintRight_toRightOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/B3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:text="25-35"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintLeft_toRightOf="@+id/B2"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/B2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginRight="26dp"
+        android:text="18-25"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintRight_toRightOf="@+id/textView12"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1"/>
+
+    <CheckBox
+        android:id="@+id/D6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Other"
+        app:layout_constraintLeft_toLeftOf="@+id/D3"
+        app:layout_constraintTop_toBottomOf="@+id/D3"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:onClick="continueToSurvey2"
+        android:src="@drawable/arrowwhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28"/>
+
+</android.support.constraint.ConstraintLayout>

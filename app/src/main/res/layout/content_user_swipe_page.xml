@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:id="@+id/scrollView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="60dp">
+            <Spinner
+                android:id="@+id/swipePageUserMenu"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="14dp"
+                android:layout_marginStart="250dp"
+                tools:layout_constraintBottom_creator="1"
+                tools:layout_constraintTop_creator="1" />
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:tools="http://schemas.android.com/tools"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:paddingLeft="16dp"
+           android:paddingRight="16dp"
+           tools:context="bob.markkouserloginsignup.userSwipePage">
+
+            <LinearLayout
+                android:id="@+id/LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/dLike1"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/prodDescBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      tools:context="bob.markkouserloginsignup.userSwipePage">
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView2"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <TextView
+                android:id="@+id/prodDescBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:id="@+id/dLike2"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      tools:context="bob.markkouserloginsignup.userSwipePage">
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox3"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView3"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <TextView
+                android:id="@+id/prodDescBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:id="@+id/dLike3"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      tools:context="bob.markkouserloginsignup.userSwipePage">
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox4"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView4"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <TextView
+                android:id="@+id/prodDescBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:id="@+id/dLike4"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      tools:context="bob.markkouserloginsignup.userSwipePage">
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox5"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView5"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <TextView
+                android:id="@+id/prodDescBox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:id="@+id/dLike5"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      tools:context="bob.markkouserloginsignup.userSwipePage">
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox6"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView6"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <TextView
+                android:id="@+id/prodDescBox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:id="@+id/dLike6"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      tools:context="bob.markkouserloginsignup.userSwipePage">
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox7"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView7"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <TextView
+                android:id="@+id/prodDescBox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:id="@+id/dLike7"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      tools:context="bob.markkouserloginsignup.userSwipePage">
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox8"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView8"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <TextView
+                android:id="@+id/prodDescBox8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:id="@+id/dLike8"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      tools:context="bob.markkouserloginsignup.userSwipePage">
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox9"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView9"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <TextView
+                android:id="@+id/prodDescBox9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:id="@+id/dLike9"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="16dp"
+                      android:paddingRight="16dp"
+                      tools:context="bob.markkouserloginsignup.userSwipePage">
+            <LinearLayout
+                android:paddingTop="8dp"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/prodExpBox10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"/>
+
+                <ImageView
+                    android:id="@+id/moreInfBox10"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="moreProdInfo"
+                    android:src="@drawable/blueplus"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/showResultView10"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@android:drawable/screen_background_light_transparent"
+                />
+
+            <TextView
+                android:id="@+id/prodDescBox10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:id="@+id/dLike10"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDislike"
+                    android:src="@drawable/downlike"/>
+
+                <ImageView
+                    android:id="@+id/uLike10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLike"
+                    android:src="@drawable/uplike"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

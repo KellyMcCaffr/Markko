@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                             tools:context="bob.markkouserloginsignup.userStore"
+                                             tools:showIn="@layout/activity_user_store">
+
+    <TextView
+        android:id="@+id/textView100"
+        android:layout_width="275dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Welcome  to the Markko Store!"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintTop_creator="1"/>
+
+    <TextView
+        android:id="@+id/storePointsView"
+        android:layout_width="205dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="39dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView100"
+        app:layout_constraintTop_toTopOf="@+id/textView100"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <Button
+        android:id="@+id/storeButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="53dp"
+        android:layout_marginRight="55dp"
+        android:background="@android:color/transparent"
+        android:onClick="buy1Clicked"
+        app:layout_constraintBottom_toTopOf="@+id/storeButton2"
+        app:layout_constraintRight_toRightOf="@+id/sdnczxm"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1"/>
+
+    <Button
+        android:id="@+id/storeButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="@android:color/transparent"
+        android:onClick="buy2Clicked"
+        app:layout_constraintBottom_toTopOf="@+id/storeButton3"
+        app:layout_constraintLeft_toLeftOf="@+id/storeButton1"
+        app:layout_constraintRight_toRightOf="@+id/storeButton1"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"/>
+
+    <Button
+        android:id="@+id/storeButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="63dp"
+        android:background="@android:color/transparent"
+        android:onClick="buy3Clicked"
+        app:layout_constraintBottom_toTopOf="@+id/storeButton4"
+        app:layout_constraintLeft_toLeftOf="@+id/storeButton2"
+        app:layout_constraintRight_toRightOf="@+id/storeButton2"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"/>
+
+    <Button
+        android:id="@+id/storeButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="buy4Clicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/storeButton3"
+        app:layout_constraintRight_toRightOf="@+id/storeButton3"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"/>
+
+    <ImageView
+        android:id="@+id/sdnczxm"
+        android:visibility="visible"
+        android:layout_width="343dp"
+        android:layout_height="416dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="Aka"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView100"
+        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintStart_toStartOf="@+id/textView100"
+        app:layout_constraintTop_toBottomOf="@+id/storePointsView"
+        android:src="@drawable/userstoreimage"/>
+
+    <Spinner
+        android:id="@+id/storeUserMenu"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView100"
+        app:layout_constraintLeft_toRightOf="@+id/textView100"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintTop_creator="1"/>
+
+</android.support.constraint.ConstraintLayout>

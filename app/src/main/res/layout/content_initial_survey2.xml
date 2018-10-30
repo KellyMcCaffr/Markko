@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             >
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="224dp"
+        android:layout_height="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:text="Choose your interests!"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/Ind2"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/Ind3"
+        android:layout_toEndOf="@+id/Ind9"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Education"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind3"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:layout_toEndOf="@+id/Ind6"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Consulting"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind5"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind1"
+        android:layout_below="@+id/Ind2"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Media/Entertain"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind6"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind2"
+        android:layout_below="@+id/Ind2"
+        android:background="@android:color/holo_orange_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Finance"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind7"
+        android:layout_width="79dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/Ind9"
+        android:layout_alignEnd="@+id/Ind11"
+        android:background="@android:color/holo_purple"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Tourism"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind4"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/Ind2"
+        android:layout_toEndOf="@+id/Ind3"
+        android:background="@android:color/holo_blue_dark"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Cooking"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind9"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind5"
+        android:layout_below="@+id/Ind5"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Trades + Services"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind10"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind2"
+        android:layout_below="@+id/Ind5"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Retail"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind11"
+        android:layout_width="77dp"
+        android:layout_height="60dp"
+
+        android:layout_below="@+id/Ind5"
+        android:layout_toEndOf="@+id/Ind2"
+        android:background="@android:color/holo_orange_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Sales "
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind8"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Ind2"
+        android:layout_toEndOf="@+id/Ind3"
+        android:background="@android:color/holo_red_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Utilities"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind13"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind5"
+        android:layout_below="@+id/Ind9"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Legal"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind15"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Ind9"
+        android:layout_toEndOf="@+id/Ind2"
+        android:background="@android:color/holo_blue_bright"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Manual Labor"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind12"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Ind5"
+        android:layout_toEndOf="@+id/Ind3"
+        android:background="@android:color/holo_green_dark"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="National Defense"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind17"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind5"
+        android:layout_below="@+id/Ind13"
+        android:background="@android:color/darker_gray"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Engineering "
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind18"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind2"
+        android:layout_below="@+id/Ind13"
+        android:background="@android:color/holo_orange_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Natural Resources"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind19"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Ind13"
+        android:layout_toEndOf="@+id/Ind2"
+        android:background="@android:color/holo_purple"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Managing  + HR"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind20"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Ind13"
+        android:layout_toEndOf="@+id/Ind3"
+        android:background="@android:color/holo_red_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Raw Production"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind21"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind5"
+        android:layout_below="@+id/Ind17"
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Travel + Transport"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind22"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind2"
+        android:layout_below="@+id/Ind17"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Oil + Gas"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind23"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Ind17"
+        android:layout_toEndOf="@+id/Ind2"
+        android:background="@android:color/holo_orange_dark"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Accounting"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind24"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Ind17"
+        android:layout_toEndOf="@+id/Ind3"
+        android:background="@android:color/holo_purple"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Building"
+        android:textColor="@android:color/black"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="100dp"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp"
+        android:onClick="continueClicked"
+        android:text="Finish"/>
+
+    <TextView
+        android:id="@+id/Ind16"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Ind9"
+        android:layout_toEndOf="@+id/Ind3"
+        android:background="@android:color/holo_purple"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Governing"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind1"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/Ind2"
+        android:layout_marginStart="41dp"
+        android:background="@android:color/holo_blue_dark"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="IT"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/Ind14"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/Ind2"
+        android:layout_below="@+id/Ind9"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Services"
+        android:textColor="@android:color/black"/>
+
+</RelativeLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="bob.markkouserloginsignup.viewAccountsDatabase"
+    tools:showIn="@layout/activity_view_accounts_database"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline6"
+        app:layout_constraintGuide_begin="524dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="524dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/rd"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:text="Name"
+        android:textColor="@android:color/black"
+        app:layout_constraintRight_toLeftOf="@+id/passwordViewBox"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ds"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="6dp"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/ds"
+        android:layout_width="73dp"
+        android:layout_height="0dp"
+        android:text="Password"
+        android:textColor="@android:color/black"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/passwordViewBox"
+        android:layout_marginStart="79dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView22"
+        android:layout_marginLeft="79dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Email"
+        android:textColor="@android:color/black"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/emailViewBox"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintRight_toRightOf="@+id/emailViewBox"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/textView13"
+        app:layout_constraintLeft_toRightOf="@+id/ds"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="4dp"
+        android:id="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="58dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="4dp"
+        android:text="Points"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@+id/textView22"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/nameViewBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintRight_toLeftOf="@+id/ds"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="33dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="37dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/rd" />
+
+    <TextView
+        android:id="@+id/passwordViewBox"
+        android:layout_width="79dp"
+        android:layout_height="440dp"
+        android:layout_marginStart="3dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/emailViewBox"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/ds"
+        android:layout_marginLeft="3dp" />
+
+    <TextView
+        android:id="@+id/emailViewBox"
+        android:layout_width="92dp"
+        android:layout_height="442dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/pointsViewBox"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/passwordViewBox" />
+
+    <TextView
+        android:id="@+id/pointsViewBox"
+        android:layout_width="0dp"
+        android:layout_height="442dp"
+        android:layout_marginBottom="35dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/textView13"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/textView22"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="nextViewDBPage"
+        android:text="Next"
+        app:layout_constraintLeft_toRightOf="@+id/passwordViewBox"
+        app:layout_constraintRight_toRightOf="@+id/passwordViewBox"
+        app:layout_constraintTop_toBottomOf="@+id/nameViewBox"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+</android.support.constraint.ConstraintLayout>
