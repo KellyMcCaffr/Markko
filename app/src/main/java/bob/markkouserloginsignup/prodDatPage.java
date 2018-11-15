@@ -226,7 +226,6 @@ public class prodDatPage extends Activity {
         entryValues.add(Integer.toString(otherLikes));
 
 
-        Log.d("Entry values:",""+entryValues);
 
         final ArrayList<String> labelValues=new ArrayList<String>();
         labelValues.add("Black");
