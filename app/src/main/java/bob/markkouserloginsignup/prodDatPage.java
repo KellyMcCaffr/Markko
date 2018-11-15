@@ -36,6 +36,7 @@ public class prodDatPage extends Activity {
     String totalLikes;
     String totalDislikes;
     int currLabelCount;
+    int i;
     int xLabelNum=0;
 
     busProductsInformationDatabaseManager busProdDB;
@@ -61,63 +62,55 @@ public class prodDatPage extends Activity {
         productName=busProdDB.getProductNameByIdentifier(enteredUsername,productNumber);
         totalLikes=busProdDB.getTotalLikes(enteredUsername,productName);
         totalDislikes=busProdDB.getTotalDislikes(enteredUsername,productName);
-        //Set chart for likes vs dislikes:
-        ArrayList<String> entryValues=new ArrayList<String>();
-        entryValues.add(totalLikes);
-        entryValues.add(totalDislikes);
-
-        final ArrayList<String> labelValues=new ArrayList<String>();
-        labelValues.add("Likes");
-        labelValues.add("Dislikes");
-
-        int[] mTemplate=ColorTemplate.MATERIAL_COLORS;
-        setChart(likeInfoChart, entryValues, labelValues, mTemplate);
         //We must reset the label count after each call(needs to be global?)
         currLabelCount=0;
-        /**
-        setEthnicityView();
-        setReligionView();
-        setAgeView();
-        setEducationView();
-        setGenderView();**/
+        setLikesChart();
+        setEthnicityChart();
+        //setReligionChart();
+        //setAgeChart();
+        //setEducationChart();
+        //setGenderChart();
     }
-
-
+    //A generalized function for setting MPAndroid bar charts with varying templates, id and entries:
     private void setChart(BarChart mChart, ArrayList<String> entryValues,final ArrayList<String> labelValues
       , int[] mTemplate){
         //ArrayList<String> entryValues=new ArrayList<String>();
         //ArrayList<String> labelValues=new ArrayList<String>();
 
-        //The number of actual labels+1;
-        //int labelCount=3;
+        //The number of actual labels+1(I don't know why we must add 1);
         final int labelCount=labelValues.size();
-        Log.d("Label size:",""+labelValues.size());
         //int maxGraphVal=10;
-        int maxGraphVal=40;
 
-        float i=maxGraphVal/(entryValues.size());
-        //int entrySpaceInterval=5;
-        float entrySpaceInterval=i;
-        float barWidth=i;
+        //The center x-coordinate for the first value:
+        i=entryValues.size()/2;
+        //The max x-value on the graph:
+        int maxGraphVal=entryValues.size()*entryValues.size();
+        Log.d("Max:", ""+maxGraphVal);
+        //The min x-value on the graph:
+        int minGraphVal=0;
+        //The x-width of each bar:
+        int mWidth=entryValues.size();
+        int mInt;
+
 
         //Create counts for iterating through the arrays provided in parameters:
         currLabelCount=0;
         int currEntryCount=0;
 
-        //We assume that these are ints as strings:
-        entryValues.add(totalLikes);
-        entryValues.add(totalDislikes);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 
         while(currEntryCount<entryValues.size()) {
             if (entryValues.get(currEntryCount).length() > 0) {
-                entries.add(new BarEntry(i, Integer.parseInt(entryValues.get(0))));
+                Log.d("I added:",""+i);
+                mInt=Integer.parseInt(entryValues.get(currEntryCount));
+                entries.add(new BarEntry(i,mInt));
             } else {
                 entries.add(new BarEntry(i, 0));
             }
             currEntryCount++;
-            i += entrySpaceInterval;
+            //i += entrySpaceInterval;
+            i+=mWidth;
         }
         dataSet = new BarDataSet(entries, "1");
         BarData data = new BarData(dataSet);
@@ -129,7 +122,7 @@ public class prodDatPage extends Activity {
         mChart.setScaleEnabled(false);
 
         //Sets the width of each bar:
-        mChart.getBarData().setBarWidth(5);
+        mChart.getBarData().setBarWidth(mWidth);
 
         mChart.setTouchEnabled(false);
         //Set and format the description:
@@ -137,14 +130,14 @@ public class prodDatPage extends Activity {
         //likeInfoChart.setDescriptionTextSize(35);
         //likeInfoChart.setDescriptionPosition(600,14);
         final XAxis axisX=mChart.getXAxis();
-        axisX.setAxisMaxValue(currEntryCount);
         axisX.setDrawLabels(true);
         axisX.setTextSize(16);
-        axisX.setGranularity(5);
-        mChart.getBarData().setBarWidth(barWidth);
+        //axisX.setGranularity(5);
+        //mChart.getBarData().setBarWidth(barWidth);
         //Count must be 1 greater than the actual number of labels:
         axisX.setLabelCount(labelCount+1,true);
         axisX.setAxisMaxValue(maxGraphVal);
+        axisX.setAxisMinValue(minGraphVal);
         //Set the x-axis labels:
         axisX.setValueFormatter(new AxisValueFormatter() {
             @Override
@@ -156,8 +149,6 @@ public class prodDatPage extends Activity {
 
                 mValue=labelValues.get(currLabelCount);
                 currLabelCount++;
-
-                Log.d("Label: ", ""+mValue);
                 return mValue;
 
             }
@@ -186,9 +177,23 @@ public class prodDatPage extends Activity {
 
     }
 
+    //Executes the steps required to set up the likes/dislikes bar chart:
+    private void setLikesChart(){
+        //Set chart for likes vs dislikes:
+        ArrayList<String> entryValues=new ArrayList<String>();
+        entryValues.add(totalLikes);
+        entryValues.add(totalDislikes);
 
-    private void setEthnicityView(){
+        final ArrayList<String> labelValues=new ArrayList<String>();
+        labelValues.add("Likes");
+        labelValues.add("Dislikes");
+
+        int[] mTemplate=ColorTemplate.MATERIAL_COLORS;
+        setChart(likeInfoChart, entryValues, labelValues, mTemplate);
+    }
+    private void setEthnicityChart(){
         String ethnicityString=busProdDB.getEthnicityString(enteredUsername,productName);
+        Log.d("Ethnicity String: ", ethnicityString);
         String[] sepEthnicities=ethnicityString.split("%");
         int blackLikes=0;
         int whiteLikes=0;
@@ -214,7 +219,23 @@ public class prodDatPage extends Activity {
                 otherLikes+=1;
             }
         }
-        String ethnFinalString="Black: "+blackLikes+" White: "+whiteLikes+" Asian: "+asianLikes+" Other: "+otherLikes;
+        ArrayList<String> entryValues=new ArrayList<String>();
+        entryValues.add(Integer.toString(blackLikes));
+        entryValues.add(Integer.toString(whiteLikes));
+        entryValues.add(Integer.toString(asianLikes));
+        entryValues.add(Integer.toString(otherLikes));
+
+
+        Log.d("Entry values:",""+entryValues);
+
+        final ArrayList<String> labelValues=new ArrayList<String>();
+        labelValues.add("Black");
+        labelValues.add("White");
+        labelValues.add("Asian");
+        labelValues.add("Other");
+
+        int[] mTemplate=ColorTemplate.MATERIAL_COLORS;
+        setChart(ethnicityChart, entryValues, labelValues, mTemplate);
 
     }
     private void setReligionView(){
