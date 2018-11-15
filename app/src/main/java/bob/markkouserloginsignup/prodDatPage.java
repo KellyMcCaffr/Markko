@@ -18,6 +18,8 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class prodDatPage extends Activity {
+    int formatValueTime=1;
+    int inc=0;
 
     BarChart likeInfoChart;
     BarChart ethnicityChart;
@@ -33,11 +35,12 @@ public class prodDatPage extends Activity {
     String productNumber;
     String productName;
 
+    ArrayList<String> mLabelVals;
     String totalLikes;
     String totalDislikes;
     int currLabelCount;
     int i;
-    int xLabelNum=0;
+
 
     busProductsInformationDatabaseManager busProdDB;
     @Override
@@ -54,6 +57,7 @@ public class prodDatPage extends Activity {
         busProdDB=new busProductsInformationDatabaseManager(this,null,null,1);
 
 
+
         Bundle paramsPassed;
         paramsPassed = getIntent().getExtras();
         enteredUsername = paramsPassed.getString("enteredUsername");
@@ -64,22 +68,26 @@ public class prodDatPage extends Activity {
         totalDislikes=busProdDB.getTotalDislikes(enteredUsername,productName);
         //We must reset the label count after each call(needs to be global?)
         currLabelCount=0;
+        formatValueTime=1;
         setLikesChart();
+        currLabelCount=0;
+        formatValueTime=1;
         setEthnicityChart();
-        //setReligionChart();
-        //setAgeChart();
+        currLabelCount=0;
+        formatValueTime=1;
+        setReligionChart();
+        currLabelCount=0;
+        formatValueTime=0;
+        setAgeChart();
         //setEducationChart();
         //setGenderChart();
     }
     //A generalized function for setting MPAndroid bar charts with varying templates, id and entries:
     private void setChart(BarChart mChart, ArrayList<String> entryValues,final ArrayList<String> labelValues
       , int[] mTemplate){
-        //ArrayList<String> entryValues=new ArrayList<String>();
-        //ArrayList<String> labelValues=new ArrayList<String>();
 
         //The number of actual labels+1(I don't know why we must add 1);
         final int labelCount=labelValues.size();
-        //int maxGraphVal=10;
 
         //The center x-coordinate for the first value:
         i=entryValues.size()/2;
@@ -127,37 +135,13 @@ public class prodDatPage extends Activity {
         mChart.setTouchEnabled(false);
         //Set and format the description:
         mChart.setDescription("");
-        //likeInfoChart.setDescriptionTextSize(35);
-        //likeInfoChart.setDescriptionPosition(600,14);
         final XAxis axisX=mChart.getXAxis();
         axisX.setDrawLabels(true);
-        axisX.setTextSize(16);
-        //axisX.setGranularity(5);
-        //mChart.getBarData().setBarWidth(barWidth);
+        axisX.setTextSize(12);
         //Count must be 1 greater than the actual number of labels:
         axisX.setLabelCount(labelCount+1,true);
         axisX.setAxisMaxValue(maxGraphVal);
         axisX.setAxisMinValue(minGraphVal);
-        //Set the x-axis labels:
-        axisX.setValueFormatter(new AxisValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, AxisBase axis) {
-                String mValue="";
-                if(currLabelCount>=(labelCount)){
-                    currLabelCount=0;
-                }
-
-                mValue=labelValues.get(currLabelCount);
-                currLabelCount++;
-                return mValue;
-
-            }
-            @Override
-            public int getDecimalDigits() {
-                return 0;
-            }
-        });
-
         axisX.setPosition(XAxis.XAxisPosition.BOTTOM);
         axisX.setCenterAxisLabels(true);
 
@@ -174,6 +158,42 @@ public class prodDatPage extends Activity {
         //Erase the gridlines from the chart:
         axisX.setDrawGridLines(false);
         mChart.getAxisLeft().setDrawGridLines(false);
+        axisX.setLabelCount(labelCount+1,true);
+        //Set the x-axis labels:
+        axisX.setValueFormatter(new AxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                /**String mValue="";
+                if (currLabelCount >= (labelCount)) {
+                    currLabelCount = 0;
+                }
+                Log.d("Here is value:", ""+value);
+                mValue = labelValues.get(currLabelCount);
+                currLabelCount++;**/
+                //return mValue;
+                //value is the current value of x:
+                int newVal=(int)value;
+                Log.d("VAL:", ""+value);
+                if(value!=0 && value!=(labelValues.size()*labelValues.size())) {
+                    return labelValues.get((newVal / labelValues.size()) - 1+inc);
+                }
+
+                else if(value==0){
+                    inc=1;
+                    return labelValues.get((newVal / labelValues.size()) - 1+inc);
+                }
+                else{
+                    inc=0;
+                    return labelValues.get((newVal / labelValues.size()) - 1+inc);
+                }
+
+
+            }
+            @Override
+            public int getDecimalDigits() {
+                return 0;
+            }
+        });
 
     }
 
@@ -237,7 +257,7 @@ public class prodDatPage extends Activity {
         setChart(ethnicityChart, entryValues, labelValues, mTemplate);
 
     }
-    private void setReligionView(){
+    private void setReligionChart(){
         String religionString=busProdDB.getReligionString(enteredUsername,productName);
         String[] sepReligions=religionString.split("%");
         int christianLikes=0;
@@ -274,11 +294,27 @@ public class prodDatPage extends Activity {
                 otherLikes+=1;
             }
         }
-        String religionFinalString="Christian: "+christianLikes+" Muslim: "+muslimLikes+" Buddhist: "+buddhistLikes
-                +" Jewish: "+jewishLikes+" Atheist: "+atheistLikes+" Other: "+otherLikes;
+        ArrayList<String> entryValues=new ArrayList<String>();
+        entryValues.add(Integer.toString(christianLikes));
+        entryValues.add(Integer.toString(muslimLikes));
+        entryValues.add(Integer.toString(buddhistLikes));
+        entryValues.add(Integer.toString(jewishLikes));
+        entryValues.add(Integer.toString(atheistLikes));
+        entryValues.add(Integer.toString(otherLikes));
+
+        final ArrayList<String> labelValues=new ArrayList<String>();
+        labelValues.add("Christian");
+        labelValues.add("Muslim");
+        labelValues.add("Buddhist");
+        labelValues.add("Jewish");
+        labelValues.add("Atheist");
+        labelValues.add("Other");
+
+        int[] mTemplate=ColorTemplate.MATERIAL_COLORS;
+        setChart(religionChart, entryValues, labelValues, mTemplate);
 
     }
-    private void setAgeView(){
+    private void setAgeChart(){
         String ageString=busProdDB.getAgeString(enteredUsername,productName);
         String[] sepAges=ageString.split("%");
         int a1Likes=0;
@@ -301,8 +337,22 @@ public class prodDatPage extends Activity {
             }
 
         }
-        String religionFinalString="<18: "+a1Likes+" 18-25: "+a2Likes+" 25-35: "+a3Likes
-                +" 35+: "+a4Likes;
+        ArrayList<String> entryValues=new ArrayList<String>();
+        entryValues.add(Integer.toString(a1Likes));
+        entryValues.add(Integer.toString(a2Likes));
+        entryValues.add(Integer.toString(a3Likes));
+        entryValues.add(Integer.toString(a4Likes));
+
+        final ArrayList<String> labelValues=new ArrayList<String>();
+        labelValues.add("<18");
+        labelValues.add("18-25");
+        labelValues.add("25-35");
+        labelValues.add("35+");
+        Log.d("Label values:", ""+labelValues);
+        Log.d("Entry values:", ""+entryValues);
+
+        int[] mTemplate=ColorTemplate.MATERIAL_COLORS;
+        setChart(ageChart, entryValues, labelValues, mTemplate);
 
     }
 
