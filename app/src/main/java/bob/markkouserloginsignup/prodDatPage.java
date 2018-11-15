@@ -79,8 +79,8 @@ public class prodDatPage extends Activity {
         currLabelCount=0;
         formatValueTime=0;
         setAgeChart();
-        //setEducationChart();
-        //setGenderChart();
+        setEducationChart();
+        setGenderChart();
     }
     //A generalized function for setting MPAndroid bar charts with varying templates, id and entries:
     private void setChart(BarChart mChart, ArrayList<String> entryValues,final ArrayList<String> labelValues
@@ -356,7 +356,7 @@ public class prodDatPage extends Activity {
 
     }
 
-    private void setEducationView(){
+    private void setEducationChart(){
         String educationString=busProdDB.getEducationString(enteredUsername,productName);
         String[] sepEducation=educationString.split("%");
         int ed1=0;
@@ -383,11 +383,26 @@ public class prodDatPage extends Activity {
             }
 
         }
-        String educationFinalString="elementary: "+ed1+" middle: "+ed2+" high school: "+ed3
-                +" college: "+ed4 +" post-grad: "+ed5;
+        ArrayList<String> entryValues=new ArrayList<String>();
+        entryValues.add(Integer.toString(ed1));
+        entryValues.add(Integer.toString(ed2));
+        entryValues.add(Integer.toString(ed3));
+        entryValues.add(Integer.toString(ed4));
+        entryValues.add(Integer.toString(ed5));
+
+        final ArrayList<String> labelValues=new ArrayList<String>();
+        labelValues.add("Elementary");
+        labelValues.add("Middle");
+        labelValues.add("Highschool");
+        labelValues.add("College");
+        labelValues.add("Post-grad");
+
+
+        int[] mTemplate=ColorTemplate.MATERIAL_COLORS;
+        setChart(educationChart, entryValues, labelValues, mTemplate);
 
     }
-    private void setGenderView(){
+    private void setGenderChart(){
         String genderString=busProdDB.getGenderString(enteredUsername,productName);
         String[] sepGender=genderString.split("%");
         int gen1=0;
@@ -406,7 +421,20 @@ public class prodDatPage extends Activity {
             }
 
         }
-        String educationFinalString="male: "+gen1+" female: "+gen2+" other: "+gen3;
+        ArrayList<String> entryValues=new ArrayList<String>();
+        entryValues.add(Integer.toString(gen1));
+        entryValues.add(Integer.toString(gen2));
+        entryValues.add(Integer.toString(gen3));
+
+        final ArrayList<String> labelValues=new ArrayList<String>();
+        labelValues.add("Male");
+        labelValues.add("Female");
+        labelValues.add("Other");
+
+
+        int[] mTemplate=ColorTemplate.MATERIAL_COLORS;
+        setChart(genderChart, entryValues, labelValues, mTemplate);
+
 
     }
 }
