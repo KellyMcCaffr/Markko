@@ -1,22 +1,32 @@
 package bob.markkouserloginsignup;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.AxisValueFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import android.util.Log;
-import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class prodDatPage extends Activity {
 
-    TextView productNameView;
-    TextView totalLikesView;
-    TextView totalDislikesView;
-    TextView percentLikesView;
-    TextView ethnicityView;
-    TextView religionView;
-    TextView ageView;
-    TextView educationView;
-    TextView genderView;
+    BarChart likeInfoChart;
+    BarChart ethnicityChart;
+    BarChart religionChart;
+    BarChart ageChart;
+    BarChart educationChart;
+    BarChart genderChart;
+
+    BarDataSet dataSet;
 
     String enteredUsername;
     String planName;
@@ -25,21 +35,20 @@ public class prodDatPage extends Activity {
 
     String totalLikes;
     String totalDislikes;
+    int currLabelCount;
+    int xLabelNum=0;
 
     busProductsInformationDatabaseManager busProdDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prod_dat_page);
-        productNameView=(TextView)findViewById(R.id.pName);
-        totalLikesView=(TextView)findViewById(R.id.totLikes);
-        totalDislikesView=(TextView)findViewById(R.id.totDislikes);
-        percentLikesView=(TextView)findViewById(R.id.percLikes);
-        ethnicityView=(TextView)findViewById(R.id.ethnicity);
-        religionView=(TextView)findViewById(R.id.religion);
-        ageView=(TextView)findViewById(R.id.age);
-        educationView=(TextView)findViewById(R.id.education);
-        genderView=(TextView)findViewById(R.id.gender);
+        likeInfoChart =findViewById(R.id.likeInfoChart);
+        ethnicityChart =findViewById(R.id.ethnicityChart);
+        religionChart =findViewById(R.id.religionChart);
+        ageChart =findViewById(R.id.ageChart);
+        educationChart =findViewById(R.id.educationChart);
+        genderChart =findViewById(R.id.genderChart);
 
         busProdDB=new busProductsInformationDatabaseManager(this,null,null,1);
 
@@ -52,53 +61,131 @@ public class prodDatPage extends Activity {
         productName=busProdDB.getProductNameByIdentifier(enteredUsername,productNumber);
         totalLikes=busProdDB.getTotalLikes(enteredUsername,productName);
         totalDislikes=busProdDB.getTotalDislikes(enteredUsername,productName);
+        //Set chart for likes vs dislikes:
+        ArrayList<String> entryValues=new ArrayList<String>();
+        entryValues.add(totalLikes);
+        entryValues.add(totalDislikes);
 
-        setNameView();
-        setTotalLikesView();
-        setTotalDislikesView();
-        setLikesPercentView();
+        final ArrayList<String> labelValues=new ArrayList<String>();
+        labelValues.add("Likes");
+        labelValues.add("Dislikes");
+
+        int[] mTemplate=ColorTemplate.MATERIAL_COLORS;
+        setChart(likeInfoChart, entryValues, labelValues, mTemplate);
+        //We must reset the label count after each call(needs to be global?)
+        currLabelCount=0;
+        /**
         setEthnicityView();
         setReligionView();
         setAgeView();
         setEducationView();
-        setGenderView();
+        setGenderView();**/
     }
 
-    private void setNameView(){
 
-        Log.d("Product number:", productNumber);
-        Log.d("Prod name:", productName);
-        productNameView.setText(productName);
-    }
+    private void setChart(BarChart mChart, ArrayList<String> entryValues,final ArrayList<String> labelValues
+      , int[] mTemplate){
+        //ArrayList<String> entryValues=new ArrayList<String>();
+        //ArrayList<String> labelValues=new ArrayList<String>();
 
-    private void setTotalLikesView(){
+        //The number of actual labels+1;
+        //int labelCount=3;
+        final int labelCount=labelValues.size();
+        Log.d("Label size:",""+labelValues.size());
+        //int maxGraphVal=10;
+        int maxGraphVal=40;
 
-        totalLikesView.setText(totalLikes);
-    }
+        float i=maxGraphVal/(entryValues.size());
+        //int entrySpaceInterval=5;
+        float entrySpaceInterval=i;
+        float barWidth=i;
 
-    private void setTotalDislikesView(){
-        totalDislikesView.setText(totalDislikes);
-    }
+        //Create counts for iterating through the arrays provided in parameters:
+        currLabelCount=0;
+        int currEntryCount=0;
 
-    private void setLikesPercentView(){
-        //Need both likes and dislikes, this fixed a bug in program
-        if(totalLikes.length()>0) {
-            float totLikesAsFloat = Float.parseFloat(totalLikes);
-            float totDislikesAsFloat;
-            if(totalDislikes.length()>0) {
-                totDislikesAsFloat = Float.parseFloat(totalDislikes);
+        //We assume that these are ints as strings:
+        entryValues.add(totalLikes);
+        entryValues.add(totalDislikes);
+
+        ArrayList<BarEntry> entries = new ArrayList<>();
+
+        while(currEntryCount<entryValues.size()) {
+            if (entryValues.get(currEntryCount).length() > 0) {
+                entries.add(new BarEntry(i, Integer.parseInt(entryValues.get(0))));
+            } else {
+                entries.add(new BarEntry(i, 0));
             }
-            else{
-                totDislikesAsFloat=0;
+            currEntryCount++;
+            i += entrySpaceInterval;
+        }
+        dataSet = new BarDataSet(entries, "1");
+        BarData data = new BarData(dataSet);
+
+        dataSet.setValueTextSize(0);
+
+        dataSet.setColors(mTemplate);
+        mChart.setData(data);
+        mChart.setScaleEnabled(false);
+
+        //Sets the width of each bar:
+        mChart.getBarData().setBarWidth(5);
+
+        mChart.setTouchEnabled(false);
+        //Set and format the description:
+        mChart.setDescription("");
+        //likeInfoChart.setDescriptionTextSize(35);
+        //likeInfoChart.setDescriptionPosition(600,14);
+        final XAxis axisX=mChart.getXAxis();
+        axisX.setAxisMaxValue(currEntryCount);
+        axisX.setDrawLabels(true);
+        axisX.setTextSize(16);
+        axisX.setGranularity(5);
+        mChart.getBarData().setBarWidth(barWidth);
+        //Count must be 1 greater than the actual number of labels:
+        axisX.setLabelCount(labelCount+1,true);
+        axisX.setAxisMaxValue(maxGraphVal);
+        //Set the x-axis labels:
+        axisX.setValueFormatter(new AxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                String mValue="";
+                if(currLabelCount>=(labelCount)){
+                    currLabelCount=0;
+                }
+
+                mValue=labelValues.get(currLabelCount);
+                currLabelCount++;
+
+                Log.d("Label: ", ""+mValue);
+                return mValue;
+
             }
-            float likesPercent = (totLikesAsFloat / (totLikesAsFloat + totDislikesAsFloat)) * 100;
-            percentLikesView.setText(Float.toString(likesPercent));
-        }
-        else{
-            percentLikesView.setText("N/A");
-        }
+            @Override
+            public int getDecimalDigits() {
+                return 0;
+            }
+        });
+
+        axisX.setPosition(XAxis.XAxisPosition.BOTTOM);
+        axisX.setCenterAxisLabels(true);
+
+        YAxis axisRight=mChart.getAxisRight();
+
+        axisRight.setEnabled(false);
+
+        YAxis axisLeft=mChart.getAxisLeft();
+
+        axisLeft.setGranularity(1);
+        axisLeft.setTextSize(18);
+        axisLeft.setTextColor(Color.BLACK);
+
+        //Erase the gridlines from the chart:
+        axisX.setDrawGridLines(false);
+        mChart.getAxisLeft().setDrawGridLines(false);
 
     }
+
 
     private void setEthnicityView(){
         String ethnicityString=busProdDB.getEthnicityString(enteredUsername,productName);
@@ -128,7 +215,6 @@ public class prodDatPage extends Activity {
             }
         }
         String ethnFinalString="Black: "+blackLikes+" White: "+whiteLikes+" Asian: "+asianLikes+" Other: "+otherLikes;
-        ethnicityView.setText(ethnFinalString);
 
     }
     private void setReligionView(){
@@ -170,7 +256,6 @@ public class prodDatPage extends Activity {
         }
         String religionFinalString="Christian: "+christianLikes+" Muslim: "+muslimLikes+" Buddhist: "+buddhistLikes
                 +" Jewish: "+jewishLikes+" Atheist: "+atheistLikes+" Other: "+otherLikes;
-        religionView.setText(religionFinalString);
 
     }
     private void setAgeView(){
@@ -198,7 +283,6 @@ public class prodDatPage extends Activity {
         }
         String religionFinalString="<18: "+a1Likes+" 18-25: "+a2Likes+" 25-35: "+a3Likes
                 +" 35+: "+a4Likes;
-        ageView.setText(religionFinalString);
 
     }
 
@@ -231,7 +315,6 @@ public class prodDatPage extends Activity {
         }
         String educationFinalString="elementary: "+ed1+" middle: "+ed2+" high school: "+ed3
                 +" college: "+ed4 +" post-grad: "+ed5;
-        educationView.setText(educationFinalString);
 
     }
     private void setGenderView(){
@@ -254,7 +337,6 @@ public class prodDatPage extends Activity {
 
         }
         String educationFinalString="male: "+gen1+" female: "+gen2+" other: "+gen3;
-        genderView.setText(educationFinalString);
 
     }
 }

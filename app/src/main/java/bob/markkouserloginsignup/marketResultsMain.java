@@ -3,18 +3,15 @@ package bob.markkouserloginsignup;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import android.widget.TextView;
 
 
 public class marketResultsMain extends Activity implements AdapterView.OnItemSelectedListener {
@@ -120,35 +117,38 @@ public class marketResultsMain extends Activity implements AdapterView.OnItemSel
         startActivity(i);
     }
     public void goToSpecificProdInfoPage(View view){
-        Intent i = new Intent(this, prodDatPage.class);
-        //We must keep passing this around in here so it is not lost
-        i.putExtra("enteredUsername",enteredUsername);
-        i.putExtra("planName",planName);
+        //Only go if the product has been created:
+        if(((TextView)view).getText()!="") {
+            Intent i = new Intent(this, prodDatPage.class);
+            //We must keep passing this around in here so it is not lost
+            i.putExtra("enteredUsername", enteredUsername);
+            i.putExtra("planName", planName);
 
-        String productNumber="-1";
-        if(view.getId()==R.id.pr1){
-            productNumber="1";
-        }
-        if(view.getId()==R.id.pr2){
-            productNumber="2";
-        }
-        if(view.getId()==R.id.pr3){
-            productNumber="3";
-        }
-        if(view.getId()==R.id.pr4){
-            productNumber="4";
-        }
-        if(view.getId()==R.id.pr5){
-            productNumber="5";
-        }
-        if(view.getId()==R.id.pr6){
-            productNumber="6";
-        }
+            String productNumber = "-1";
+            if (view.getId() == R.id.pr1) {
+                productNumber = "1";
+            }
+            if (view.getId() == R.id.pr2) {
+                productNumber = "2";
+            }
+            if (view.getId() == R.id.pr3) {
+                productNumber = "3";
+            }
+            if (view.getId() == R.id.pr4) {
+                productNumber = "4";
+            }
+            if (view.getId() == R.id.pr5) {
+                productNumber = "5";
+            }
+            if (view.getId() == R.id.pr6) {
+                productNumber = "6";
+            }
 
-        i.putExtra("productNumber",productNumber);
+            i.putExtra("productNumber", productNumber);
 
 
-        startActivity(i);
+            startActivity(i);
+        }
     }
 
     public void goToMainBusPage(View view){
