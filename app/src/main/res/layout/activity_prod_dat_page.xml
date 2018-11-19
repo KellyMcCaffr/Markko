@@ -112,12 +112,4 @@
 
 </ScrollView>
 
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="125dp"
-        android:layout_height="64dp"
-        android:layout_alignParentEnd="true"
-        android:background="@android:color/holo_green_light"
-        android:onClick="goBackToOverview"
-        android:text="Back" />
 </RelativeLayout>
