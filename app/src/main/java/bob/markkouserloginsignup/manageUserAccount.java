@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.util.Log;
 
 
 public class manageUserAccount extends Activity implements AdapterView.OnItemSelectedListener {
@@ -20,6 +21,7 @@ public class manageUserAccount extends Activity implements AdapterView.OnItemSel
     TextView emailBox;
 
     userAccountDatabaseManager usersDB;
+    businessAccountsDatabaseManager busDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,7 @@ public class manageUserAccount extends Activity implements AdapterView.OnItemSel
         paramsPassed = getIntent().getExtras();
         enteredUsername = paramsPassed.getString("enteredUsername");
         usersDB=new userAccountDatabaseManager(this,null,null,1);
+        busDB=new businessAccountsDatabaseManager(this,null,null,1);
         setContentView(R.layout.activity_manage_user_account);
         manageSpinner();
         declareTextViews();
@@ -45,11 +48,16 @@ public class manageUserAccount extends Activity implements AdapterView.OnItemSel
 
         String newPassword=((TextView)findViewById(R.id.muaPassword)).getText().toString();
         String newEmail=((TextView)findViewById(R.id.muaEmail)).getText().toString();
-        usersDB.updateUsername(enteredUsername,newUsername);
-        enteredUsername=newUsername;
-        usersDB.updatePassword(enteredUsername,newPassword);
-        usersDB.updateEmail(enteredUsername,newEmail);
-        goToMainUserPage();
+        if(busDB.nameExists(newUsername) || usersDB.nameExists(newUsername) && !(newUsername.equals(enteredUsername))) {
+            goToErrorPage("Name already exists");
+        }
+        else{
+            usersDB.updateUsername(enteredUsername, newUsername);
+            enteredUsername = newUsername;
+            usersDB.updatePassword(enteredUsername, newPassword);
+            usersDB.updateEmail(enteredUsername, newEmail);
+            goToMainUserPage();
+        }
     }
     public void declareTextViews(){
         usernameBox=(TextView)findViewById(R.id.muaUsername);
@@ -117,6 +125,11 @@ public class manageUserAccount extends Activity implements AdapterView.OnItemSel
     @Override
     public void onNothingSelected(AdapterView<?> parent){
 
+    }
+    public void goToErrorPage(String message){
+        Intent i = new Intent(this, generalErrorPage.class);
+        i.putExtra("errorMessage",message);
+        startActivity(i);
     }
     public void goToPaymentInfoPage(){
         Intent i = new Intent(this, businessPaymentInfoPage.class);

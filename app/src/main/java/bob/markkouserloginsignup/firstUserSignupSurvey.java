@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.util.Log;
 
 public class firstUserSignupSurvey extends Activity {
     String enteredUsername;
+    boolean dataAccepted=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,8 @@ public class firstUserSignupSurvey extends Activity {
             gender="other";
         }
         else{
+            Log.d("firstSurvey","1");
+            dataAccepted=false;
             gender="";
         }
 
@@ -58,6 +62,8 @@ public class firstUserSignupSurvey extends Activity {
             age="35+";
         }
         else{
+            Log.d("firstSurvey","2");
+            dataAccepted=false;
             age="";
         }
         CheckBox C1=(CheckBox) findViewById(R.id.C1);
@@ -77,6 +83,8 @@ public class firstUserSignupSurvey extends Activity {
             race="other";
         }
         else{
+            Log.d("firstSurvey","3");
+            dataAccepted=false;
             race="";
         }
         CheckBox D1=(CheckBox) findViewById(R.id.D1);
@@ -104,6 +112,8 @@ public class firstUserSignupSurvey extends Activity {
             religion="other";
         }
         else{
+            Log.d("firstSurvey","4");
+            dataAccepted=false;
             religion="";
         }
         CheckBox E1=(CheckBox) findViewById(R.id.E1);
@@ -128,6 +138,8 @@ public class firstUserSignupSurvey extends Activity {
         }
         else{
             educationLevel="";
+            Log.d("firstSurvey","5");
+            dataAccepted=false;
         }
         userAccountDatabaseProducts.set_gender(gender);
         userAccountDatabaseProducts.set_age(age);
@@ -138,8 +150,30 @@ public class firstUserSignupSurvey extends Activity {
     }
     public void continueToSurvey2(View view){
         setSurvey1DataVariables();
-        Intent i = new Intent(this, initialSurvey2.class);
-        i.putExtra("enteredUsername",enteredUsername);
+        if(dataAccepted) {
+            Intent i = new Intent(this, initialSurvey2.class);
+            i.putExtra("enteredUsername", enteredUsername);
+            startActivity(i);
+        }
+        else{
+            dataAccepted=true;
+            goToErrorPage("You must enter a single value per option!");
+        }
+    }
+    public void goBackToSignupPage(){
+        Intent i = new Intent(this,signUpChoice.class);
+        //We need to pass the enteredUsername back so that our main page remembers it
+        //We will need to do this every time.
+        startActivity(i);
+    }
+    //Prevent user from entering same info again:
+    @Override
+    public void onBackPressed(){
+        goBackToSignupPage();
+    }
+    public void goToErrorPage(String message){
+        Intent i = new Intent(this, generalErrorPage.class);
+        i.putExtra("errorMessage",message);
         startActivity(i);
     }
 

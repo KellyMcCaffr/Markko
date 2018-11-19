@@ -91,6 +91,12 @@ public class initialSurvey2 extends Activity {
         i.putExtra("justCreated",true);
         startActivity(i);
     }
+    public void goBackToSignupPage(){
+        Intent i = new Intent(this,signUpChoice.class);
+        //We need to pass the enteredUsername back so that our main page remembers it
+        //We will need to do this every time.
+        startActivity(i);
+    }
     //Adds all of the new accounts data to the database.
     //Will also take new user to main account page.
     //Does this need to be public for button click to work?
@@ -100,6 +106,11 @@ public class initialSurvey2 extends Activity {
         userAccountDatabaseProducts newAccountObject=new userAccountDatabaseProducts();
         accountDatabaseChanger.addAccount(newAccountObject,getStringRepresentationOfSelectedIndustries());
         goToMainUserPage();
+    }
+    //Prevent user from entering  info again:
+    @Override
+    public void onBackPressed(){
+      goBackToSignupPage();
     }
 
 }
