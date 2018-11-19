@@ -155,6 +155,7 @@ public class userSwipePage extends Activity implements OnItemSelectedListener  {
     }
     //Adds the view cover:
     private void setLikeThread(int boxIndex,Drawable initialImage){
+        Log.d("USERSWIPEPAGE","Called set like thread");
         //Sets the appropriate image view to our like image:
         ImageView v=findViewById(imViewIdList.get(boxIndex));
         v.setImageDrawable(initialImage);
@@ -251,10 +252,12 @@ public class userSwipePage extends Activity implements OnItemSelectedListener  {
             TextView topText=findViewById((int)stuff.get(0));
             ImageView imView=findViewById((int)stuff.get(1));
             TextView descrip=findViewById((int)stuff.get(2));
+
             topText.setText("No items available!");
             topText.setTextColor(Color.RED);
             imView.setVisibility(INVISIBLE);
             descrip.setText("");
+            //Log.d("d", "sht");
         }
     }
     //Responds to a press of the like arrow at some product box:
@@ -393,11 +396,13 @@ public class userSwipePage extends Activity implements OnItemSelectedListener  {
         ArrayList<Drawable> mImageList=(ArrayList<Drawable>)usedProdInfo.get(boxIndex).get(2);
         //Gets the imageCount:
         int currImageCount=imageCountList.get(boxIndex);
+        ImageView prodImView=(ImageView)findViewById(imViewIdList.get(boxIndex));
         //Checks if the last im has been reached:
         if(currImageCount>=(mImageList.size()-1) ){
             Log.d("RIGHTSWIPE", "Return at right max");
             Log.d("RIGHTSWIPE", "Curr image count: "+currImageCount);
             Log.d("RIGHTSWIPE", "Curr image list size: "+mImageList.size());
+            //prodImView.setImageDrawable(mImageList.get(currImageCount));
             return;
         }
         //Increments the imageCount:
@@ -405,7 +410,7 @@ public class userSwipePage extends Activity implements OnItemSelectedListener  {
         Log.d("RIGHTSWIPE", "Curr image count: "+currImageCount);
         imageCountList.set(boxIndex,currImageCount);
         //Set the appropriate image:
-        ImageView prodImView=(ImageView)findViewById(imViewIdList.get(boxIndex));
+
         prodImView.setImageDrawable(mImageList.get(currImageCount));
     }
 
